@@ -48,6 +48,7 @@ namespace SpaDay.Controllers
             };
 
             List<string> appropriateFacials = new List<string>();
+
             for (int i = 0; i < facials.Count; i++)
             {
                 if (CheckSkinType(skintype, facials[i]))
@@ -55,6 +56,10 @@ namespace SpaDay.Controllers
                     appropriateFacials.Add(facials[i]);
                 }
             }
+            ViewBag.manipedi = manipedi;
+            ViewBag.skintype = skintype;
+            ViewBag.appropriateFacials = appropriateFacials;
+            ViewBag.name = name;
             return View();
         }
 
